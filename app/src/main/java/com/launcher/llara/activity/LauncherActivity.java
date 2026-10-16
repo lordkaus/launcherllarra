@@ -462,6 +462,10 @@ public class LauncherActivity extends Activity {
         if (shakeDetector != null) shakeDetector.stop();
         ModernSheet.dismissAll();
         hidePullHint();
+        setDockHover(false);
+        showDockBadge(false);
+        showEdgeHints(false, false, false);
+        resetDrawerHover();
         stopClockHandler();
         appWidgetHost.stopListening();
     }
