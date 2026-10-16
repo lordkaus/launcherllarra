@@ -41,3 +41,8 @@ captures/
 MEMORY_PLAN.md
 altera*.txt
 *.vectorcraft
+
+# ===== Scripts locais (fora do GitHub) =====
+debug_waydroid.sh
+deploy.sh
+logs.sh
