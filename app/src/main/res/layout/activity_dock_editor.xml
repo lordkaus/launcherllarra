@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <!-- Bloqueio sólido atrás da status bar (edge-to-edge ignora setStatusBarColor) -->
+    <View
+        android:id="@+id/status_scrim"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FF121212"
+        android:visibility="gone" />
+
+    <!-- App bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FF121212"
+        android:paddingStart="4dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="&#x2190;"
+            android:textSize="22sp"
+            android:textColor="#FF00D4FF"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Editar Dock"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3" />
+
+    </LinearLayout>
+
+    <!-- Faixa do preview: wallpaper visível SÓ dentro do palco -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent">
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="220dp"
+            android:background="#FF121212" />
+
+        <FrameLayout
+            android:id="@+id/preview_stage"
+            android:layout_width="0dp"
+            android:layout_height="220dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_preview_frame">
+
+            <com.launcher.llara.view.DockEditorView
+                android:id="@+id/dock_editor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="220dp"
+            android:background="#FF121212" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="#FF121212" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:background="#FF121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ═══════════ ÍCONES ═══════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <!-- Nº de ícones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nº de ícones"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_count_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_count"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_count_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho dos ícones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tamanho"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_size_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_size"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:text="52dp"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_size_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Margem -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Margem"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_margin_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_margin"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:text="24dp"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_margin_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ═══════════ APARÊNCIA ═══════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <!-- Cor do fundo -->
+            <LinearLayout
+                android:id="@+id/btn_bg_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cor do fundo"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_fundo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transparente"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Posição -->
+            <LinearLayout
+                android:id="@+id/btn_posicao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Posição"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_posicao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inferior"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Páginas -->
+            <LinearLayout
+                android:id="@+id/btn_paginas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Páginas"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_paginas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Mostrar nomes -->
+            <LinearLayout
+                android:id="@+id/btn_nomes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mostrar nomes"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_nomes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sim"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ═══════════ GESTOS ═══════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gestos por ícone"
+                android:textColor="#AAFFFFFF"
+                android:textSize="13sp"
+                android:paddingBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Toque em um ícone no preview acima para configurar gestos"
+                android:textColor="#66FFFFFF"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Salvar -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Salvar"
+            android:textColor="#FF121212"
+            android:backgroundTint="#FF00D4FF" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

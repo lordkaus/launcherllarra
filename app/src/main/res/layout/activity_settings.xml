@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF121212"
+    android:fitsSystemWindows="true">
+
+    <!-- App bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="#FF1A1A1A">
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="&#x2190;"
+            android:textSize="22sp"
+            android:textColor="#FF00D4FF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_title"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Launcher Llara &#8226; v1.1"
+                android:textSize="12sp"
+                android:textColor="#88FFFFFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:animateLayoutChanges="true">
+
+        <!-- ═══════════════ APARÊNCIA ═══════════════ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aparência"
+            android:textColor="#FF00D4FF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:paddingStart="4dp"
+            android:paddingBottom="4dp" />
+
+        <!-- ── GAVETA ── -->
+        <LinearLayout
+            android:id="@+id/header_gaveta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F5C2;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gaveta"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_gaveta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lista de aplicativos"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_gaveta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_gaveta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <!-- Colunas da gaveta -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Colunas da gaveta"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_columns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_columns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"
+                    android:progress="1"
+                    android:progressTint="#FF00D4FF"
+                    android:thumbTint="#FF00D4FF"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho dos ícones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tamanho dos ícones"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/lbl_icon_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50%"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_icon_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="99"
+                    android:progress="49"
+                    android:progressTint="#FF00D4FF"
+                    android:thumbTint="#FF00D4FF"
+                    android:layout_marginTop="4dp" />
+
+                <ImageView
+                    android:id="@+id/icon_size_preview"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitCenter" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Velocidade da animação -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Velocidade da animação"
+                            android:textColor="@android:color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tempo de abrir/fechar a gaveta"
+                            android:textColor="#88FFFFFF"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_drawer_anim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="200ms"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_drawer_anim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="50"
+                    android:progressTint="#FF00D4FF"
+                    android:thumbTint="#FF00D4FF"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Pesquisa -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Barra de pesquisa"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Busca no topo da gaveta"
+                        android:textColor="#88FFFFFF"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/sw_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="#FF00D4FF"
+                    android:trackTint="#5500D4FF"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Cor de fundo -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cor de fundo"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cor do fundo da gaveta"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp"
+                    android:paddingBottom="8dp" />
+
+                <com.launcher.llara.view.ColorPickerView
+                    android:id="@+id/color_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Opacidade -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Opacidade"
+                            android:textColor="@android:color/white"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transparência do fundo da gaveta"
+                            android:textColor="#88FFFFFF"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <SeekBar
+                        android:id="@+id/seek_drawer_alpha"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="255"
+                        android:progressTint="#FF00D4FF"
+                        android:thumbTint="#FF00D4FF"
+                        android:layout_marginHorizontal="12dp" />
+
+                    <TextView
+                        android:id="@+id/lbl_drawer_alpha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="94%"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/drawer_color_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#F0000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── DOCK ── -->
+        <LinearLayout
+            android:id="@+id/header_dock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x2B1B;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dock"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_dock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Barra inferior de atalhos"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_dock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_dock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <!-- Mostrar dock -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mostrar dock"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exibe a barra na tela inicial"
+                        android:textColor="#88FFFFFF"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <Switch
+                    android:id="@+id/sw_dock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="#FF00D4FF"
+                    android:trackTint="#5500D4FF"
+                    tools:ignore="UnusedAttribute" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Animação da dock -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Velocidade da animação"
+                            android:textColor="@android:color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tempo de abrir/fechar a dock"
+                            android:textColor="#88FFFFFF"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_dock_anim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="500ms"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_dock_anim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="50"
+                    android:progressTint="#FF00D4FF"
+                    android:thumbTint="#FF00D4FF"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Editar dock -->
+            <Button
+                android:id="@+id/btn_edit_dock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="&#x1F527; Editar dock"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ── WIDGETS ── -->
+        <LinearLayout
+            android:id="@+id/header_widgets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F9E9;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Widgets"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_widgets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Relógio e cantos na tela inicial"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_widgets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_widgets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cantos arredondados"
+                            android:textColor="@android:color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arredondamento dos widgets"
+                            android:textColor="#88FFFFFF"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_widget_radius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0dp"
+                        android:textColor="#FF00D4FF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_pill"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="2dp" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seek_widget_radius"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="24"
+                    android:progress="0"
+                    android:progressTint="#FF00D4FF"
+                    android:thumbTint="#FF00D4FF"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ── ÍCONES ── -->
+        <LinearLayout
+            android:id="@+id/header_icones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F3A8;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ícones"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_icones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Formato por área: gaveta, dock e início"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_icones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_icones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_edit_icons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F3A8; Editar ícones"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ═══════════════ COMPORTAMENTO ═══════════════ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comportamento"
+            android:textColor="#FF00D4FF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:paddingStart="4dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp" />
+
+        <!-- ── ATALHOS ── -->
+        <LinearLayout
+            android:id="@+id/header_atalhos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F517;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atalhos"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_atalhos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Papel de parede e widgets"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_atalhos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_atalhos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_wallpaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F5BC; Papel de parede"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <Button
+                android:id="@+id/btn_widgets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F9E9; Widgets"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ── GESTOS ── -->
+        <LinearLayout
+            android:id="@+id/header_gestos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F446;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gestures_inputs"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_gestos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Toques e movimentos"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_gestos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_gestos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_gestures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F446; Configurar gestos"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ═══════════════ SISTEMA ═══════════════ -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sistema"
+            android:textColor="#FF00D4FF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:paddingStart="4dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp" />
+
+        <!-- ── DADOS ── -->
+        <LinearLayout
+            android:id="@+id/header_dados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F9F9;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dados"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_dados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cache e apps ocultos"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_dados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_dados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F9F9; Limpar cache de ícones"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+            <Button
+                android:id="@+id/btn_hidden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="&#x1F441; Apps ocultos"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ── PADRÃO ── -->
+        <LinearLayout
+            android:id="@+id/header_padrao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x1F3E0;"
+                android:textSize="20sp"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Padrão"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_padrao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Launcher padrão do sistema"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_padrao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_padrao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Launcher padrão"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_default_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="—"
+                    android:textColor="#FF00D4FF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_pill"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="2dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_make_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x1F3E0; Definir como launcher padrão"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- ── SOBRE ── -->
+        <LinearLayout
+            android:id="@+id/header_sobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x2139;"
+                android:textSize="20sp"
+                android:textColor="#FF00D4FF"
+                android:paddingEnd="12dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sobre"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sub_sobre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Versão e informações"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arrow_sobre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#x276F;"
+                android:textColor="#88FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/card_sobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="&#x2139; Sobre o Launcher Llara"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

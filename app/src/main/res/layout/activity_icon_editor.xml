@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FF121212"
+    android:fitsSystemWindows="true">
+
+    <!-- App bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="4dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="&#x2190;"
+            android:textSize="22sp"
+            android:textColor="#FF00D4FF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Editar Ícones"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Unificar + tópicos por superfície -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/unify_icons"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/switch_unify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbl_unify_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unify_sub"
+        android:textColor="#88FFFFFF"
+        android:textSize="12sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp" />
+
+    <LinearLayout
+        android:id="@+id/topic_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btn_topic_drawer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/topic_drawer"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_button"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btn_topic_dock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/topic_dock"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_button"
+            android:layout_marginHorizontal="4dp" />
+
+        <Button
+            android:id="@+id/btn_topic_ws"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/topic_ws"
+            android:textSize="13sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_button"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lbl_topic_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/following_drawer"
+        android:textColor="#FF00D4FF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:visibility="gone"
+        android:paddingBottom="4dp" />
+
+    <!-- Preview fixo com cobaia aleatória -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:id="@+id/preview_stage"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:background="@drawable/bg_preview_frame"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/preview_icon"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/preview_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/corner_pills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cantos"
+                android:textColor="#AAFFFFFF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/pill_tl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FF00D4FF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:layout_marginHorizontal="2dp" />
+
+            <TextView
+                android:id="@+id/pill_tr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FF00D4FF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:layout_marginHorizontal="2dp" />
+
+            <TextView
+                android:id="@+id/pill_br"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FF00D4FF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:layout_marginHorizontal="2dp" />
+
+            <TextView
+                android:id="@+id/pill_bl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FF00D4FF"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_pill"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:layout_marginHorizontal="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Arraste os cantos do preview para personalizar"
+            android:textColor="#66FFFFFF"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:paddingTop="4dp" />
+
+    </LinearLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp">
+
+        <!-- ═══════════ FORMATO ═══════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/btn_shape"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Formato"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lbl_shape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quadrado"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho do ícone da área de trabalho -->
+            <LinearLayout
+                android:id="@+id/row_ws_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tamanho na área de trabalho"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_ws_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_ws"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Auto"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_ws_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho da legenda -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tamanho da legenda"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_label_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_label"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:text="11sp"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_label_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho do ícone (glifo) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tamanho do ícone"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_glyph_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_glyph"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:text="70%"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_glyph_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FF2A2A2A"
+                android:layout_marginVertical="4dp" />
+
+            <!-- Tamanho do prato -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tamanho do prato"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btn_plate_minus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="−"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+                <TextView
+                    android:id="@+id/lbl_plate"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:text="100%"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Button
+                    android:id="@+id/btn_plate_plus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:background="@drawable/bg_button"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- ═══════════ COBAIA ═══════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ícone de teste"
+                android:textColor="#AAFFFFFF"
+                android:textSize="13sp"
+                android:paddingBottom="8dp" />
+
+            <Button
+                android:id="@+id/btn_shuffle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trocar ícone"
+                android:background="@drawable/bg_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:paddingVertical="12dp" />
+
+        </LinearLayout>
+
+        <!-- Salvar -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Salvar"
+            android:textColor="#FF121212"
+            android:backgroundTint="#FF00D4FF" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>
