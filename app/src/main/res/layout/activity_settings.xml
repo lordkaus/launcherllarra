@@ -48,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Launcher Llara &#8226; v1.1"
+                android:text="Larla Launcher &#8226; v1.1"
                 android:textSize="12sp"
                 android:textColor="#88FFFFFF" />
 
@@ -391,7 +391,7 @@
                     android:textSize="12sp"
                     android:paddingBottom="8dp" />
 
-                <com.launcher.llara.view.ColorPickerView
+                <com.launcher.larla.view.ColorPickerView
                     android:id="@+id/color_picker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -1331,7 +1331,7 @@
                 android:id="@+id/btn_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="&#x2139; Sobre o Launcher Llara"
+                android:text="&#x2139; Sobre o Larla Launcher"
                 android:background="@drawable/bg_button"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:textColor="@android:color/white"

@@ -75,7 +75,7 @@
             android:layout_weight="1"
             android:background="@drawable/bg_preview_frame">
 
-            <com.launcher.llara.view.DockEditorView
+            <com.launcher.larla.view.DockEditorView
                 android:id="@+id/dock_editor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

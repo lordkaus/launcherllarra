@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Launcher Llara</string>
+    <string name="app_name">Larla Launcher</string>
     <string name="search_hint">Buscar apps&#8230;</string>
     <string name="settings_title">Configurações</string>
     <string name="clear_cache">Limpar Cache</string>
@@ -12,7 +12,7 @@
     <string name="yes">Sim</string>
     <string name="no">Não</string>
     <string name="cache_cleared">Cache será limpo ao voltar</string>
-    <string name="about_title">Sobre o Launcher Llara</string>
+    <string name="about_title">Sobre o Larla Launcher</string>
     <string name="about_message">Versão 1.1\n\nLauncher leve e rápido para Android 5.0+\nFeito com APIs nativas - zero dependências</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>

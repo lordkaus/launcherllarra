@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.launcher.llara'
+    namespace 'com.launcher.larla'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.launcher.llara"
+        applicationId "com.launcher.larla"
         minSdk 21            // Android 5.0+
         targetSdk 35         // Android 15
         versionCode 2

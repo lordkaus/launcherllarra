@@ -1,11 +1,11 @@
 # Regras R8 ultra-agressivas para APK mínimo
 
 # Manter apenas entry points essenciais
--keep public class com.launcher.llara.activity.** { *; }
--keep public class com.launcher.llara.model.** { *; }
--keep public class com.launcher.llara.view.** { *; }
--keep public class com.launcher.llara.widget.** { *; }
--keep public class com.launcher.llara.util.** { *; }
+-keep public class com.launcher.larla.activity.** { *; }
+-keep public class com.launcher.larla.model.** { *; }
+-keep public class com.launcher.larla.view.** { *; }
+-keep public class com.launcher.larla.widget.** { *; }
+-keep public class com.launcher.larla.util.** { *; }
 
 # Remover todos os logs em release
 -assumenosideeffects class android.util.Log {

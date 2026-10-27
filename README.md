@@ -1,4 +1,4 @@
-# Launcher Llara
+# Larla Launcher
 
 Lançador para Android 100% nativo e sem dependências: nenhum SDK, biblioteca ou framework de terceiros — só APIs do próprio Android, do Android 5.0+ (API 21) em diante.
 
@@ -23,6 +23,6 @@ Ou use `./deploy.sh` (compila, conecta no Waydroid/USB e instala).
 
 ## Estrutura
 
-- `app/src/main/java/com/launcher/llara/` — `activity/`, `model/`, `receiver/`, `util/`, `view/`, `widget/`
+- `app/src/main/java/com/launcher/larla/` — `activity/`, `model/`, `receiver/`, `util/`, `view/`, `widget/`
 - `app/src/main/res/` — layouts, drawables, `mipmap-*/`, `values/`
 - `deploy.sh` / `debug_waydroid.sh` / `logs.sh` / `backup.sh` — automação local

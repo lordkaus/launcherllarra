@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Script de Backup - Launcher Llara
+# Script de Backup - Larla Launcher
 # Uso: ./backup.sh
 
 BACKUP_DIR="/home/lordk/apks/backups"
-PROJECT_DIR="/home/lordk/apks/LauncherLlara_"
+PROJECT_DIR="/home/lordk/apks/Larla Launcher"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-BACKUP_NAME="launcher_llara_backup_${TIMESTAMP}.tar.gz"
+BACKUP_NAME="larla_launcher_backup_${TIMESTAMP}.tar.gz"
 LOG_FILE="${BACKUP_DIR}/backup.log"
 
 # Criar diretório de backups se não existir
@@ -32,5 +32,5 @@ fi
 
 # Manter apenas os últimos 10 backups
 cd "$BACKUP_DIR" || exit
-ls -t launcher_llara_backup_*.tar.gz 2>/dev/null | tail -n +11 | xargs -r rm -f
+ls -t larla_launcher_backup_*.tar.gz 2>/dev/null | tail -n +11 | xargs -r rm -f
 echo "[$(date)] Limpeza automática concluída" >> "$LOG_FILE"
