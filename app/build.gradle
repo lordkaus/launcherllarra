@@ -2,6 +2,12 @@ plugins {
     id 'com.android.application'
 }
 
+def keystorePropsFile = rootProject.file("keystore.properties")
+def keystoreProps = new Properties()
+if (keystorePropsFile.exists()) {
+    keystorePropsFile.withInputStream { keystoreProps.load(it) }
+}
+
 android {
     namespace 'com.launcher.larla'
     compileSdk 35
@@ -10,14 +16,27 @@ android {
         applicationId "com.launcher.larla"
         minSdk 21            // Android 5.0+
         targetSdk 35         // Android 15
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
         resConfigs "pt", "en"
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePropsFile.exists()) {
+                storeFile rootProject.file(keystoreProps['storeFile'])
+                storePassword keystoreProps['storePassword']
+                keyAlias keystoreProps['keyAlias']
+                keyPassword keystoreProps['keyPassword']
+            }
+        }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
+            // Assinatura estável quando keystore.properties existe (local e CI);
+            // sem o arquivo (ex.: PR de terceiros), cai no debug.
+            signingConfig keystorePropsFile.exists() ? signingConfigs.release : signingConfigs.debug
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
