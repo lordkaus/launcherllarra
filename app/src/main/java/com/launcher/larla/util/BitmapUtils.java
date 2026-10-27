@@ -49,11 +49,17 @@ public class BitmapUtils {
 
         if (icon instanceof BitmapDrawable) {
             Bitmap original = ((BitmapDrawable) icon).getBitmap();
-            if (original != null && original.getWidth() <= targetSizePx && original.getHeight() <= targetSizePx) {
-                return original;
-            }
             if (original != null) {
-                return Bitmap.createScaledBitmap(original, targetSizePx, targetSizePx, true);
+                try {
+                    if (original.getWidth() <= targetSizePx && original.getHeight() <= targetSizePx) {
+                        // Copia: o bitmap pertence ao cache de recursos e pode estar
+                        // compartilhado com outras telas (gaveta, dock, área de trabalho).
+                        Bitmap copy = original.copy(Bitmap.Config.ARGB_8888, false);
+                        if (copy != null) return copy;
+                    } else {
+                        return Bitmap.createScaledBitmap(original, targetSizePx, targetSizePx, true);
+                    }
+                } catch (Exception ignored) { }
             }
         }
 

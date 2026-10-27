@@ -113,7 +113,7 @@ public class SettingsActivity extends Activity {
         TextView lblIconSize = findViewById(R.id.lbl_icon_size);
         android.widget.ImageView iconPreview = findViewById(R.id.icon_size_preview);
         try {
-            iconPreview.setImageDrawable(getPackageManager().getApplicationIcon("com.launcher.larla"));
+            iconPreview.setImageDrawable(getPackageManager().getApplicationIcon(getPackageName()));
         } catch (Exception e) {
             iconPreview.setImageDrawable(getApplicationInfo().loadIcon(getPackageManager()));
         }

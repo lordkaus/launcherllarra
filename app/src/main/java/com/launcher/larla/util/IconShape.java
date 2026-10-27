@@ -217,7 +217,7 @@ public class IconShape {
         out.close();
     }
 
-    /** Recorta o bitmap na forma. Recicla a origem se gerar um novo bitmap. */
+    /** Recorta o bitmap na forma. A origem NÃO é reciclada (pode estar compartilhada). */
     public static Bitmap mask(Bitmap src, int shape) {
         return mask(src, shape, null);
     }
@@ -237,7 +237,6 @@ public class IconShape {
             Paint xf = new Paint(Paint.ANTI_ALIAS_FLAG);
             xf.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
             c.drawPath(p, xf);
-            src.recycle();
             return out;
         } catch (Exception e) {
             return src;
